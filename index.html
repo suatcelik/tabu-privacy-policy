@@ -69,16 +69,7 @@
       font-size: 12px;
       margin-top: 8px;
     }
-    .warn {
-      border: 1px solid rgba(167,139,250,.28);
-      background: rgba(167,139,250,.10);
-      padding: 12px 14px;
-      border-radius: 14px;
-      margin-top: 14px;
-      color: #efe7ff;
-      font-size: 14px;
-    }
-    .notice {
+     .notice {
       border: 1px solid rgba(56,189,248,.25);
       background: rgba(56,189,248,.08);
       padding: 12px 14px;
@@ -86,6 +77,15 @@
       margin-top: 14px;
       color: #c7f0ff;
       font-size: 14px;
+    }
+    .warn {
+      border: 1px solid rgba(167,139,250,.28);
+      background: rgba(167,139,250,.10);
+       padding: 12px 14px;
+      border-radius: 14px;
+      margin-top: 14px;
+      color: #efe7ff;
+       font-size: 14px;
     }
     .footer {
       color: var(--muted);
@@ -106,7 +106,7 @@
     <div class="card">
       <h1>📄 Gizlilik Politikası</h1>
       <p class="sub">
-        <strong>Son Güncelleme:</strong> 10 Mart 2026
+        <strong>Son Güncelleme:</strong> 17 Şubat 2026
         <span class="pill">Uygulama: Tabu GO (com.arcodiba.tabuapp)</span>
       </p>
 
@@ -121,8 +121,8 @@
       <ul>
         <li><strong>Oyun verileri:</strong> Skorlar ve isteğe bağlı takma ad (leaderboard için).</li>
         <li><strong>Cihaz bilgileri:</strong> Cihaz modeli, işletim sistemi sürümü, uygulama sürümü, dil/bölge gibi teknik bilgiler.</li>
-        <li><strong>Cihaz tanımlayıcıları:</strong> Uygulama içi analitik ve hata tespiti için gerekli olabilecek anonim cihaz tanımlayıcıları.</li>
-        <li><strong>Kullanım verileri:</strong> Uygulama içi ekran görüntüleme, oturum süresi, oyun başlatma gibi anonim etkileşim verileri.</li>
+        <li><strong>Cihaz tanımlayıcıları:</strong> Reklam gösterimi için gerekli olabilecek anonim cihaz tanımlayıcıları (örn. Advertising ID / IDFV).</li>
+         <li><strong>Kullanım verileri:</strong> Uygulama içi ekran görüntüleme, oturum süresi, oyun başlatma gibi anonim etkileşim verileri.</li>
       </ul>
 
       <div class="warn">
@@ -130,21 +130,44 @@
         Uygulama, kullanıcıdan <strong>ses kaydı almaz</strong>, mikrofon kaydı yapmaz ve ses verisi toplamaz.
         Android tarafında bazı kütüphaneler nedeniyle proje yapılandırmasında <code>RECORD_AUDIO</code> izni
         görünebilir. Bu izin Uygulama tarafından <strong>kullanılmamaktadır</strong>.
+        (Mümkünse gerekmiyorsa AndroidManifest’ten kaldırmanız önerilir.)
       </div>
 
-      <h2>2. Analitik ve Bulut Hizmetleri (Google Firebase)</h2>
+      <h2>2. Reklam Hizmetleri (Google AdMob)</h2>
+      <p>Uygulama, reklam göstermek için <strong>Google AdMob</strong> kullanır.</p>
+
+      <div class="notice">
+        <strong>Reklamlar (Non-Personalized Ads):</strong>
+        Uygulamada <strong>kişiselleştirilmiş reklam</strong> hedeflemesi amaçlanmamaktadır.
+        Reklamlar bağlamsal/anonim sinyallerle gösterilebilir.
+      </div>
+
       <p>
-        Uygulama, oyun içeriklerini (kelimeleri) çekmek, uygulama performansını ve kullanımını anlamak için <strong>Google Firebase</strong> (örn. Firebase Analytics)
-        gibi hizmetleri kullanabilir. Bu kapsamda:
+        AdMob, reklamların sunulması ve ölçümlenmesi için bazı teknik bilgileri işleyebilir:
+        anonim cihaz tanımlayıcıları (örn. Advertising ID / IDFV) ve ağ bilgileri gibi.
+        Bu veriler Google tarafından kendi gizlilik politikaları kapsamında işlenir.
       </p>
+
+      <p>
+        Google Gizlilik Politikası:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          https://policies.google.com/privacy
+        </a>
+      </p>
+
+      <h2>3. Analitik (Google Firebase)</h2>
+      <p>
+        Uygulama, uygulama performansını ve kullanımını anlamak için <strong>Google Firebase</strong> (örn. Firebase Analytics)
+        gibi analitik hizmetleri kullanabilir. Bu kapsamda:
+         </p>
       <ul>
         <li>Uygulama kullanım istatistikleri (oturumlar, ekran görüntülemeleri, temel etkileşim olayları)</li>
         <li>Genel teknik bilgiler (uygulama sürümü, cihaz modeli, işletim sistemi sürümü)</li>
       </ul>
       <p>
         Bu veriler <strong>kişisel kimliğinizle (isim, e-posta, telefon vb.) ilişkilendirilmez</strong> ve
-        sadece uygulama geliştirme/analiz amaçlarıyla kullanılır.
-      </p>
+        Uygulama geliştirme/analiz amaçlarıyla kullanılır.
+           </p>
 
       <p>
         Firebase Gizlilik Bilgisi:
@@ -153,7 +176,7 @@
         </a>
       </p>
 
-      <h2>3. İzleme (Tracking)</h2>
+      <h2>4. İzleme (Tracking)</h2>
       <p>
         Uygulama, Apple’ın “tracking” tanımı kapsamında kullanıcıları <strong>diğer şirketlerin uygulamaları veya web siteleri</strong>
         arasında takip etmeyi amaçlamaz. Toplanan veriler:
@@ -165,38 +188,38 @@
       </ul>
       <p><strong>amacıyla kullanılmaz.</strong></p>
 
-      <h2>4. Uygulama İçi Satın Almalar (Kozmetik ve İçerik Paketleri)</h2>
-      <p>Uygulama, ek kelime paketleri ve tema tasarımları gibi dijital içerikler sunabilir.</p>
-      <div class="notice">
+      <h2>5. Uygulama İçi Satın Almalar (Reklam Kaldırma)</h2>
+      <p>Uygulama, reklamları kalıcı olarak kaldırmak için dijital bir ürün sunabilir.</p>
+         <div class="notice">
         <strong>Ödeme Güvenliği:</strong> Satın alma işlemleri mağazanın kendi ödeme altyapısı üzerinden gerçekleşir
         (iOS: Apple In-App Purchase / App Store, Android: Google Play Billing). Kredi kartı/banka bilgileriniz
         tarafımızca <strong>görülmez</strong>, <strong>saklanmaz</strong> ve <strong>işlenmez</strong>.
       </div>
 
-      <h2>5. Veri Saklama ve Silme</h2>
+      <h2>6. Veri Saklama ve Silme</h2>
       <p>
-        Oyun verileri cihazınızda ve/veya güvenli bulut altyapısında (örn. Firebase) saklanabilir.
+        Oyun verileri (skorlar vb.) cihazınızda ve/veya güvenli bulut altyapısında (örn. Firebase) saklanabilir.
         Verilerinizin silinmesini talep etmek için <strong>tabugoapp@gmail.com</strong> üzerinden bizimle iletişime geçebilirsiniz.
       </p>
 
-      <h2>6. Çocukların Gizliliği</h2>
+      <h2>7. Çocukların Gizliliği</h2>
       <p>
         Tabu GO, 13 yaş altındaki çocuklardan bilerek kişisel veri toplamaz.
         Eğer bir çocuğun bize veri sağladığını fark ederseniz, lütfen iletişime geçin; mümkün olan en kısa sürede
         gerekli işlemler yapılacaktır.
       </p>
 
-      <h2>7. Güvenlik</h2>
+      <h2>8. Güvenlik</h2>
       <p>
         Toplanan verileri korumak için makul teknik ve idari önlemler alınır. Ancak hiçbir sistem %100 güvenli değildir.
       </p>
 
-      <h2>8. Değişiklikler</h2>
+      <h2>9. Değişiklikler</h2>
       <p>
         Bu politika zaman zaman güncellenebilir. Güncellemeler “Son Güncelleme” tarihi ile birlikte bu sayfada yayınlanır.
       </p>
 
-      <h2>9. İletişim</h2>
+      <h2>10. İletişim</h2>
       <p>Gizlilik politikamız hakkındaki sorularınız için:</p>
       <p>📧 <strong>tabugoapp@gmail.com</strong></p>
 
